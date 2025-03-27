@@ -25,7 +25,7 @@ class Control:
         self.Kp = np.eye(6)
         self.K_distance = 0.5
         self.v_max_joint = 0.01
-        self.robot_point_radius = 0.2
+        self.robot_point_radius = 0.20
         self.security_distance = 0.0001
         self.warning_distance = 0.15
         self.dq_ans = None
@@ -60,11 +60,13 @@ class Control:
         ## Obstacle avoidance
         # Spheres
         self.dist_obs = []
-        for articulation in range(13):
+        for articulation in range(12):
             J_i = J_list[articulation][:3,:13]
             X_i = T_list[articulation][:3, 3]
+            if articulation == 8 or articulation == 10:
+                X_i = (T_list[articulation][:3, 3]+T_list[articulation+1][:3, 3])/2
 
-            #
+            # For every obstacle
             for sphere in self.spheres:
                 sphere_pose = sphere.getPose()
                 d_from_centers = np.linalg.norm(X_i - sphere_pose)
@@ -176,9 +178,9 @@ class Control:
 
         if self.task.get_type_of_task() == 'WAYPOINTS':
             if norm_error < 0.05:
-                self.v_max_joint = 0.00075
+                self.v_max_joint = 0.001
             elif norm_error < 0.15:
-                m = (0.00075-0.01)/(0.05-0.15)
+                m = (0.001-0.01)/(0.05-0.15)
                 self.v_max_joint = (norm_error-0.15)*m+0.01
             else:
                 self.v_max_joint = 0.01

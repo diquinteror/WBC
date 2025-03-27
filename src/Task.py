@@ -49,7 +49,9 @@ class Task:
 
                         if len(self.waypoints) - 1 == self.waypoints_index:
                             print('Track finished !!!')
-                            self.task_finished_flag = True
+                            #self.task_finished_flag = True
+                            self.waypoints_index=0
+
                         else:
                             print(f'Arrived at point {self.waypoints_index}')
                             self.waypoints_index += 1

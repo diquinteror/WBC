@@ -18,11 +18,21 @@ This project is part of the robotics curriculum at **École Centrale de Nantes (
 
 ## 📂 Structure
 
-- `src/` – Implementation files  
+- `src/` – Implementation files
+- `scenes/` – Robot model and enviroment
+- `api/` - CopeliaSim api
 - `README.md` – Project description
 
 ---
+## 🚀 How to Launch
 
+1. **Open the Simulation Scene**  
+   Launch the file `scenes/13ddl_scene.ttt` using [CoppeliaSim](https://www.coppeliarobotics.com/).
+
+2. **Run the Controller**  
+   Execute the main script from the root directory:
+   ```bash
+   python src/main.py
 ## 📈 Features
 
 - QP-based inverse dynamics control
