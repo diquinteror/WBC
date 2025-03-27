@@ -19,9 +19,6 @@ This project is part of the robotics curriculum at **École Centrale de Nantes (
 ## 📂 Structure
 
 - `src/` – Implementation files  
-- `data/` – Log files and datasets  
-- `plots/` – Figures generated for analysis  
-- `docs/` – Report and supplementary documents  
 - `README.md` – Project description
 
 ---
@@ -30,7 +27,8 @@ This project is part of the robotics curriculum at **École Centrale de Nantes (
 
 - QP-based inverse dynamics control
 - 13 DoF robot simulation
-- Constraint handling (torque, joint limits, etc.)
+- Obstacle avoidance
+- Constraint handling (speed limits, joint limits, etc.)
 - End-effector trajectory tracking
 - Performance evaluation (computation time, cost function, tracking error)
 
