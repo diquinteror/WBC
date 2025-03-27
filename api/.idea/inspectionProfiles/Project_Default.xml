@@ -1,0 +1,14 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="试验.整数转为罗马数字.n" />
+          <option value="试验.整数转为罗马数字.self" />
+          <option value="pachong1" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
